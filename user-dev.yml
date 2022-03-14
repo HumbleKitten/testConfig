@@ -1,0 +1,24 @@
+server:
+  port: 9091
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test
+    username: root
+    password: rootroot
+  application:
+    name: userService
+
+mybatis:
+  type-aliases-package: com.test.domain
+  mapper-locations: classpath:mappers/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 1
